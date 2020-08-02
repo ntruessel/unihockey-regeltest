@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "./static/css/main.5f361e03.chunk.css",
-    "main.js": "./static/js/main.af46dc88.chunk.js",
-    "main.js.map": "./static/js/main.af46dc88.chunk.js.map",
-    "runtime-main.js": "./static/js/runtime-main.5ac40726.js",
-    "runtime-main.js.map": "./static/js/runtime-main.5ac40726.js.map",
-    "static/css/2.af3c1da9.chunk.css": "./static/css/2.af3c1da9.chunk.css",
-    "static/js/2.a54a51d5.chunk.js": "./static/js/2.a54a51d5.chunk.js",
-    "static/js/2.a54a51d5.chunk.js.map": "./static/js/2.a54a51d5.chunk.js.map",
-    "index.html": "./index.html",
-    "precache-manifest.3cf5d90375688507f36037e2f1bed9b4.js": "./precache-manifest.3cf5d90375688507f36037e2f1bed9b4.js",
-    "service-worker.js": "./service-worker.js",
-    "static/css/2.af3c1da9.chunk.css.map": "./static/css/2.af3c1da9.chunk.css.map",
-    "static/css/main.5f361e03.chunk.css.map": "./static/css/main.5f361e03.chunk.css.map",
-    "static/js/2.a54a51d5.chunk.js.LICENSE.txt": "./static/js/2.a54a51d5.chunk.js.LICENSE.txt"
+    "main.css": "/regeltest.ntruessel.ch/static/css/main.5f361e03.chunk.css",
+    "main.js": "/regeltest.ntruessel.ch/static/js/main.c3f17916.chunk.js",
+    "main.js.map": "/regeltest.ntruessel.ch/static/js/main.c3f17916.chunk.js.map",
+    "runtime-main.js": "/regeltest.ntruessel.ch/static/js/runtime-main.eb607f0f.js",
+    "runtime-main.js.map": "/regeltest.ntruessel.ch/static/js/runtime-main.eb607f0f.js.map",
+    "static/css/2.af3c1da9.chunk.css": "/regeltest.ntruessel.ch/static/css/2.af3c1da9.chunk.css",
+    "static/js/2.a54a51d5.chunk.js": "/regeltest.ntruessel.ch/static/js/2.a54a51d5.chunk.js",
+    "static/js/2.a54a51d5.chunk.js.map": "/regeltest.ntruessel.ch/static/js/2.a54a51d5.chunk.js.map",
+    "index.html": "/regeltest.ntruessel.ch/index.html",
+    "precache-manifest.318c0073507d1f6ab2358813ce87c0f5.js": "/regeltest.ntruessel.ch/precache-manifest.318c0073507d1f6ab2358813ce87c0f5.js",
+    "service-worker.js": "/regeltest.ntruessel.ch/service-worker.js",
+    "static/css/2.af3c1da9.chunk.css.map": "/regeltest.ntruessel.ch/static/css/2.af3c1da9.chunk.css.map",
+    "static/css/main.5f361e03.chunk.css.map": "/regeltest.ntruessel.ch/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.a54a51d5.chunk.js.LICENSE.txt": "/regeltest.ntruessel.ch/static/js/2.a54a51d5.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.5ac40726.js",
+    "static/js/runtime-main.eb607f0f.js",
     "static/css/2.af3c1da9.chunk.css",
     "static/js/2.a54a51d5.chunk.js",
     "static/css/main.5f361e03.chunk.css",
-    "static/js/main.af46dc88.chunk.js"
+    "static/js/main.c3f17916.chunk.js"
   ]
 }
