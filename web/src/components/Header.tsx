@@ -1,18 +1,16 @@
 import React from 'react';
 import { Dropdown, Nav, Navbar } from 'react-bootstrap';
-import { useParams, useHistory, generatePath, useRouteMatch } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 
 export const Header = () => {
     const { lang } = useParams();
     const history = useHistory();
-    const match = useRouteMatch();
     return <Navbar bg="dark" variant="dark">
         <Navbar.Brand>Unihockey Regeltest</Navbar.Brand>
         <Nav className="mr-auto"/>
         <Dropdown onSelect={(lang => {
-            history.push({
-                pathname: generatePath(match.path, { lang: lang ?? 'de' }),
-            });
+            const path = history.location.pathname;
+            history.push(path.replace(/\/(de|it|fr)\//, `/${lang}/`));
         })}>
             <Dropdown.Toggle variant="light">
                 {lang === 'de'

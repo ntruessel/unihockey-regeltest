@@ -2,9 +2,8 @@ import React from 'react';
 import { loadProgress } from '../utils';
 import { Table } from 'react-bootstrap';
 
-const progress = loadProgress();
-
 export const Statistics: React.FC = () => {
+    const progress = loadProgress();
     return <Table>
         <thead>
         <tr>
@@ -16,7 +15,7 @@ export const Statistics: React.FC = () => {
         {progress
             .map((value, index) =>
                 value === null
-                    ? <></>
+                    ? null
                     : <tr key={index}>
                         <td>{index}</td>
                         <td>{value?.repetitions}</td>
