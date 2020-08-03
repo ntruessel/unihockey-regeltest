@@ -1,7 +1,7 @@
 import { Question } from './components/Question';
 import { State } from './pages/Practice';
 import moment from 'moment';
-import questions from './questions.json';
+import questions from './hooks/questions/de.json';
 
 export function shuffle<T>(array: T[]): T[] {
     let currentIndex = array.length;

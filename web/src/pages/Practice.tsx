@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Question } from '../components/Question';
 import { availableQuestions, fib, loadProgress, randomElement, saveProgress, toQuestion } from '../utils';
-import questions from '../questions.json';
 import moment from 'moment';
+import { useQuestions } from '../hooks/questions/useQuestions';
 
 
 export interface State {
@@ -15,6 +15,7 @@ const initialProgress = loadProgress();
 export const Practice: React.FC = () => {
     const [progress, setProgress] = useState(initialProgress);
     const questionIndex = randomElement(availableQuestions(progress));
+    const questions = useQuestions();
     return <QuestionView question={toQuestion(questions[questionIndex])}
                          onAnswer={wasCorrect => {
                              const updatedProgress = [...progress];
