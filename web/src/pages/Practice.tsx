@@ -10,9 +10,8 @@ export interface State {
     lockedUntil: string,
 }
 
-const initialProgress = loadProgress();
-
 export const Practice: React.FC = () => {
+    const initialProgress = loadProgress();
     const [progress, setProgress] = useState(initialProgress);
     const questionIndex = randomElement(availableQuestions(progress));
     const questions = useQuestions();
