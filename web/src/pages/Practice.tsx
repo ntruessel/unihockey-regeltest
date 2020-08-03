@@ -21,7 +21,7 @@ export const Practice: React.FC = () => {
                              if (!wasCorrect) {
                                  delete updatedProgress[questionIndex];
                              } else {
-                                 const repetitions = progress[questionIndex]?.repetitions ?? 1;
+                                 const repetitions = (progress[questionIndex]?.repetitions ?? 0) + 1;
                                  const lockedUntil = moment();
                                  lockedUntil.add(30 * fib(repetitions), 'minutes');
                                  updatedProgress[questionIndex] = {
