@@ -3,6 +3,7 @@ import { Button, Card, ListGroup } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquare, faCheckSquare } from '@fortawesome/free-regular-svg-icons';
 import { arrayEquals } from '../utils';
+import { useTranslations } from '../hooks/translations/useTranslations';
 
 interface Props {
     question: Question,
@@ -25,6 +26,7 @@ interface Option {
 }
 
 export const Question: React.FC<Props> = props => {
+    const t = useTranslations();
     return <Card>
         <Card.Header>
             <Card.Title>{props.question.title}</Card.Title>
@@ -48,7 +50,7 @@ export const Question: React.FC<Props> = props => {
                         } else {
                             props.evaluate();
                         }
-                    }}>Weiter</Button>
+                    }}>{t('next')}</Button>
         </Card.Footer>
     </Card>;
 };
