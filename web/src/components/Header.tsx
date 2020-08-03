@@ -5,7 +5,7 @@ import { useHistory, useParams } from 'react-router-dom';
 export const Header = () => {
     const { lang } = useParams();
     const history = useHistory();
-    return <Navbar bg="dark" variant="dark">
+    return <Navbar bg="dark" variant="dark" className="mb-3">
         <Navbar.Brand>Unihockey Regeltest</Navbar.Brand>
         <Nav className="mr-auto"/>
         <Dropdown onSelect={(lang => {
