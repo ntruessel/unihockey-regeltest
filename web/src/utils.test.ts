@@ -1,4 +1,5 @@
-import { arrayEquals, fib, random } from './utils';
+import { arrayEquals, availableQuestions, fib, random } from './utils';
+import moment from 'moment';
 
 it('computes the fibonacci sequence', () => {
     expect(fib(0)).toEqual(1);
@@ -21,4 +22,11 @@ it('computes random numbers', () => {
         expect(value).toBeGreaterThanOrEqual(0);
         expect(value).toBeLessThan(10);
     }
+});
+
+it('removes blocked questions', () => {
+    const progress = new Array(6);
+    progress[0] = { repetitions: 1, lockedUntil: moment().add(1, 'hour').format() };
+    progress[4] = { repetitions: 1, lockedUntil: moment().add(1, 'hour').format() };
+    expect(availableQuestions(progress)).toEqual([1, 2, 3, 5]);
 });
