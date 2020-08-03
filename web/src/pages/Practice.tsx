@@ -10,7 +10,8 @@ export interface State {
     lockedUntil: string,
 }
 
-const initialProgress: State[] = JSON.parse(localStorage.getItem('progress') ?? '[]');
+const storedProgress = localStorage.getItem('progress');
+const initialProgress: State[] = storedProgress ? JSON.parse(storedProgress) : new Array(questions.length);
 
 export const Practice: React.FC = () => {
     const [progress, setProgress] = useState(initialProgress);
