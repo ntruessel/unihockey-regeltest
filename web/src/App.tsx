@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from 'react-bootstrap';
 import { Practice } from './pages/Practice';
 import { HashRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
-import { Statistics } from './pages/Statistics';
+import { Progress } from './pages/Progress';
 import { Header } from './components/Header';
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
                     <Redirect exact from="/" to="/de"/>
                     <Redirect exact from="/:lang" to="/:lang/practice"/>
                     <Route exact path="/:lang/practice"><Practice/></Route>
-                    <Route exact path="/:lang/statistics"><Statistics/></Route>
+                    <Route exact path="/:lang/statistics"><Progress/></Route>
                     <Route>
                     </Route>
                 </Switch>
