@@ -30,3 +30,9 @@ it('removes blocked questions', () => {
     progress[4] = { repetitions: 1, lockedUntil: moment().add(1, 'hour').format() };
     expect(availableQuestions(progress)).toEqual([1, 2, 3, 5]);
 });
+
+it('returns all questions if no question is available', () => {
+    const progress = new Array(1);
+    progress[0] = { repetitions: 1, lockedUntil: moment().add(1, 'hour').format() };
+    expect(availableQuestions(progress)).toEqual([0]);
+});

@@ -69,6 +69,9 @@ export function availableQuestions(progress: State[]): number[] {
             result.push(i);
         }
     }
+    if (result.length === 0) {
+        return Array.from(Array(progress.length).keys());
+    }
     return result;
 }
 
