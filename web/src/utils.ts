@@ -1,4 +1,6 @@
 import { Question } from './components/Question';
+import { State } from './pages/Practice';
+import moment from 'moment';
 
 export function shuffle<T>(array: T[]): T[] {
     let currentIndex = array.length;
@@ -17,6 +19,10 @@ export function shuffle<T>(array: T[]): T[] {
 
 export function random(max: number) {
     return Math.floor(Math.random() * max);
+}
+
+export function randomElement<T>(array: T[]): T {
+    return array[random(array.length)];
 }
 
 export function toQuestion(question: any): Question {
@@ -53,4 +59,14 @@ export function fib(n: number): number {
         u = cache;
     }
     return u;
+}
+
+export function availableQuestions(progress: State[]): number[] {
+    const result = [];
+    for (let i = 0; i < progress.length; ++i) {
+        if (progress[i] === undefined || progress[i] === null || moment(progress[i].lockedUntil).isBefore(moment())) {
+            result.push(i);
+        }
+    }
+    return result;
 }

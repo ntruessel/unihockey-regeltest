@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Question } from '../components/Question';
-import { fib, random, toQuestion } from '../utils';
+import { availableQuestions, fib, randomElement, toQuestion } from '../utils';
 import questions from '../questions.json';
 import moment from 'moment';
 
 
-interface State {
+export interface State {
     repetitions: number,
     lockedUntil: string,
 }
@@ -14,12 +14,7 @@ const initialProgress: State[] = JSON.parse(localStorage.getItem('progress') ?? 
 
 export const Practice: React.FC = () => {
     const [progress, setProgress] = useState(initialProgress);
-    const availableQuestions = questions.filter((_, index) =>
-        progress[index] === undefined || progress[index] === null
-            ? true
-            : moment(progress[index].lockedUntil).isBefore(moment()),
-    );
-    const questionIndex = random(availableQuestions.length);
+    const questionIndex = randomElement(availableQuestions(progress));
     return <QuestionView question={toQuestion(questions[questionIndex])}
                          onAnswer={wasCorrect => {
                              const updatedProgress = [...progress];
