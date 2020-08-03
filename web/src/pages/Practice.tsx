@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Question } from '../components/Question';
-import { availableQuestions, fib, randomElement, toQuestion } from '../utils';
+import { availableQuestions, fib, loadProgress, randomElement, saveProgress, toQuestion } from '../utils';
 import questions from '../questions.json';
 import moment from 'moment';
 
@@ -10,8 +10,7 @@ export interface State {
     lockedUntil: string,
 }
 
-const storedProgress = localStorage.getItem('progress');
-const initialProgress: State[] = storedProgress ? JSON.parse(storedProgress) : new Array(questions.length);
+const initialProgress = loadProgress();
 
 export const Practice: React.FC = () => {
     const [progress, setProgress] = useState(initialProgress);
@@ -24,13 +23,13 @@ export const Practice: React.FC = () => {
                              } else {
                                  const repetitions = progress[questionIndex]?.repetitions ?? 1;
                                  const lockedUntil = moment();
-                                 lockedUntil.add(10 * fib(repetitions), 'minutes');
+                                 lockedUntil.add(30 * fib(repetitions), 'minutes');
                                  updatedProgress[questionIndex] = {
                                      repetitions: repetitions,
                                      lockedUntil: lockedUntil.format(),
                                  };
                              }
-                             localStorage.setItem('progress', JSON.stringify(updatedProgress));
+                             saveProgress(updatedProgress);
                              setProgress(updatedProgress);
                          }}/>;
 };

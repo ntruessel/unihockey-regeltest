@@ -1,6 +1,7 @@
 import { Question } from './components/Question';
 import { State } from './pages/Practice';
 import moment from 'moment';
+import questions from './questions.json';
 
 export function shuffle<T>(array: T[]): T[] {
     let currentIndex = array.length;
@@ -69,4 +70,30 @@ export function availableQuestions(progress: State[]): number[] {
         }
     }
     return result;
+}
+
+export function loadProgress(): State[] {
+    const defaultValue = new Array(questions.length);
+    const version = localStorage.getItem('version');
+
+    switch (version) {
+        case null: {
+            return defaultValue;
+        }
+        case '1': {
+            const storedProgress = localStorage.getItem('progress');
+            if (storedProgress === null) {
+                return defaultValue;
+            }
+            return JSON.parse(storedProgress);
+        }
+        default: {
+            return defaultValue;
+        }
+    }
+}
+
+export function saveProgress(progress: State[]) {
+    localStorage.setItem('version', '1');
+    localStorage.setItem('progress', JSON.stringify(progress));
 }
