@@ -27,7 +27,7 @@ const messages: Translations = {
 };
 
 export function useTranslations(): ((key: keyof Messages) => string) {
-    const { lang } = useParams();
+    const { lang } = useParams<{ lang: string }>();
     switch (lang) {
         case 'de':
         case 'fr':

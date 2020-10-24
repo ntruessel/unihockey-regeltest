@@ -6,7 +6,7 @@ import { arrayEquals } from '../utils';
 import { useTranslations } from '../hooks/translations/useTranslations';
 
 interface Props {
-    question: Question,
+    question: RuleQuestion,
     review: boolean,
     selected: boolean[],
     invert: (index: number) => void,
@@ -14,7 +14,7 @@ interface Props {
     continue: (wasCorrect: boolean) => void,
 }
 
-export interface Question {
+export interface RuleQuestion {
     title: string,
     options: Option[],
 }

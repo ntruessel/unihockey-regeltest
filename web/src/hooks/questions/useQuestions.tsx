@@ -15,7 +15,7 @@ interface RawAnswer {
 }
 
 export function useQuestions(): RawQuestion[] {
-    const { lang } = useParams();
+    const { lang } = useParams<{ lang: string }>();
     switch (lang) {
         case 'fr':
             return fr;

@@ -4,7 +4,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import { useTranslations } from '../hooks/translations/useTranslations';
 
 export const Header = () => {
-    const { lang } = useParams();
+    const { lang } = useParams<{ lang: string }>();
     const history = useHistory();
     const t = useTranslations();
     return <Navbar bg="dark" variant="dark" className="mb-3">

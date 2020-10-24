@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Question } from '../components/Question';
+import { Question, RuleQuestion } from '../components/Question';
 import { availableQuestions, fib, loadProgress, randomElement, saveProgress, toQuestion } from '../utils';
 import moment from 'moment';
 import { useQuestions } from '../hooks/questions/useQuestions';
@@ -34,7 +34,7 @@ export const Practice: React.FC = () => {
                          }}/>;
 };
 
-const QuestionView: React.FC<{ question: Question, onAnswer: (wasCorrect: boolean) => void }> = props => {
+const QuestionView: React.FC<{ question: RuleQuestion, onAnswer: (wasCorrect: boolean) => void }> = props => {
     const [selected, setSelected] = useState([false, false, false]);
     const [review, setReview] = useState(false);
     return <Question selected={selected}

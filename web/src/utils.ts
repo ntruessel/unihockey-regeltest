@@ -1,4 +1,4 @@
-import { Question } from './components/Question';
+import { RuleQuestion } from './components/Question';
 import { State } from './pages/Practice';
 import moment from 'moment';
 import questions from './hooks/questions/de.json';
@@ -26,7 +26,7 @@ export function randomElement<T>(array: T[]): T {
     return array[random(array.length)];
 }
 
-export function toQuestion(question: any): Question {
+export function toQuestion(question: any): RuleQuestion {
     return {
         title: question.question,
         options: shuffle(question.answers.map((answer: any) => {
